@@ -1,0 +1,15 @@
+---
+
+- name: Install needed packages
+  become: yes
+  package:
+    state: latest
+    name: [ 'i3', 'i3status' ]
+
+- template:
+    src: config
+    dest: ~/.config/i3/config
+
+- template:
+    src: i3blocks.conf
+    dest: ~/.i3blocks.conf

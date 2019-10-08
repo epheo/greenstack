@@ -1,0 +1,29 @@
+---
+
+- name: Renew SSL certificate
+  become: yes
+  shell: |
+    certbot certonly \
+      --webroot \
+      -w /srv/http/certbot \
+      --renew-with-new-domains \
+      --expand \
+      --allow-subset-of-names \
+      --non-interactive \
+      --deploy-hook 'cat $RENEWED_LINEAGE/fullchain.pem $RENEWED_LINEAGE/privkey.pem > /usr/share/httpd/certs/haproxy.pem && systemctl restart haproxy' \
+      -d epheo.eu \
+      -d shaddock.epheo.eu \
+      -d shdk.epheo.eu \
+      -d hpe.epheo.eu \
+      -d public.epheo.eu \
+      -d pub.epheo.eu \
+      -d private.epheo.eu \
+      -d blog.epheo.eu \
+      -d nc.epheo.eu \
+      -d grid.epheo.eu \
+      -d jenkins.epheo.eu \
+      -d ssh.epheo.eu \
+      -d music.epheo.eu \
+      -d def.ms \
+      -d haze.def.ms \
+      -d btc-forecast.com 

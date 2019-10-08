@@ -1,0 +1,11 @@
+---
+
+- name: Install needed packages
+  become: yes
+  package:
+    state: latest
+    name: [ 'screen', 'git', 'rsync' ]
+
+- template:
+    src: ../templates/screenrc
+    dest: ~/.screenrc

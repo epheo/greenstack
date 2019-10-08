@@ -1,0 +1,9 @@
+---
+
+- hosts: nodes
+  vars:
+    allow_reboot: False
+  roles:
+    - common
+    - vim
+    - zsh
