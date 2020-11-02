@@ -1,6 +1,6 @@
 ---
 
-- hosts: localhost
+- hosts: nodes
   vars:
     allow_reboot: False
   roles:

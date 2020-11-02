@@ -1,5 +1,8 @@
 ---
 
+- debug:
+    var: ansible_distribution
+
 - name: Install needed packages
   become: yes
   package:
@@ -11,12 +14,12 @@
       - xorg-x11-xinit
       - xpdf
       - viewnior
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
 
 - template:
     src: Xdefaults
     dest: ~/.Xdefaults
 
 - template:
-    src: mimeapps.list
-    dest: ~/.config/mimeapps.list
+    src: defaults.list
+    dest: ~/.local/share/applications/defaults.list

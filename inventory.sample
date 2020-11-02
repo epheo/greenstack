@@ -1,5 +1,2 @@
 [nodes]
-xxxxxxx        ansible_host=xxxxxxxxxxxxx     ansible_user=xxxxx
-xxxxxxx        ansible_host=xxxxxxxxxxxxx     ansible_user=xxxxx
-xxxxxxx        ansible_host=xxxxxxxxxxxxx     ansible_user=xxxxx
-xxxxxxx        ansible_host=xxxxxxxxxxxxx     ansible_user=xxxxx
+localhost        ansible_host=localhost    ansible_user=epheo
