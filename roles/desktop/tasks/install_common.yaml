@@ -1,0 +1,43 @@
+---
+
+- name: Install needed packages
+  become: yes
+  pacman:
+    state: latest
+    name: 
+      - alacritty
+      - qutebrowser
+      - vlc
+      - openconnect
+      - playerctl
+      - ranger
+      - ttf-font-awesome
+      - eog
+      - remmina
+      - pavucontrol
+      - freerdp
+      - redshift
+      - virt-manager
+      - pass
+      - pulseaudio
+
+- copy:
+    src: ../files/qutebrowser
+    dest: ~/.config/
+
+- copy:
+    src: ../files/gtk-2.0
+    dest: ~/.config/
+
+- copy:
+    src: ../files/gtk-3.0
+    dest: ~/.config/
+
+- copy:
+    src: ../files/redshift
+    dest: ~/.config/
+
+- copy:
+    src: ../files/Code
+    dest: ~/.config/
+

@@ -1,0 +1,32 @@
+---
+
+- name: Install workplace packages
+  become: yes
+  package:
+    state: latest
+    name: 
+      - sway
+      - waybar
+      - wofi
+      - swaylock
+      - mako
+
+- copy:
+    src: ../files/sway
+    dest: ~/.config/
+
+- copy:
+    src: ../files/waybar
+    dest: ~/.config/
+
+- copy:
+    src: ../files/swaylock
+    dest: ~/.config/
+
+- copy:
+    src: ../files/mako
+    dest: ~/.config/
+
+- name: Reload sway config
+  ignore_errors: yes
+  shell: "swaymsg reload "

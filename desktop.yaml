@@ -1,12 +1,11 @@
 ---
 
 - hosts: nodes
-  vars:
-    allow_reboot: False
+  gather_facts: no
   roles:
     - common
-    - vim
-    - zsh
-    - xorg
-    - i3
-    - qutebrowser
+    - desktop
+  tasks:
+    - include_tasks: roles/common/tasks/install_base_pkgs.yaml
+    - include_tasks: roles/desktop/tasks/install_common.yaml
+    - include_tasks: roles/desktop/tasks/install_sway_wayland.yaml

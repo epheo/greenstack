@@ -1,4 +1,0 @@
----
-
-- include_tasks: requirements.yaml
-- include_tasks: update.yaml

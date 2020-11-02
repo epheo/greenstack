@@ -1,0 +1,9 @@
+---
+
+- hosts: nodes
+  gather_facts: no
+  roles:
+    - common
+  tasks:
+    - include_tasks: roles/common/tasks/install_base_pkgs.yaml
+    - include_tasks: roles/common/tasks/install_rescue_pkgs.yaml

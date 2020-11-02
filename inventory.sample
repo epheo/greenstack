@@ -1,2 +1,2 @@
 [nodes]
-localhost        ansible_host=localhost    ansible_user=epheo
+127.0.0.1   ansible_connection=local

@@ -1,0 +1,56 @@
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+let g:vundle_default_git_proto='git'
+
+Bundle 'gmarik/vundle'
+Bundle 'sjl/gundo.vim'
+Bundle 'scrooloose/nerdtree'
+
+" sudo write this
+cmap W! w !sudo tee % >/dev/null
+cmap w!! w !sudo tee % >/dev/null
+
+syntax on
+filetype on
+
+set number
+set title
+
+set ruler " show the cursor position all the time
+set nostartofline " Avoid moving cursor to BOL when jumping around
+set virtualedit=block " Let cursor move past the last char in <C-v> mode
+set scrolloff=3 " Keep 3 context lines above and below the cursor
+set backspace=2 " Allow backspacing over autoindent, EOL, and BOL" set background=dark
+set wrap " Wrap text
+set linebreak " don't wrap textin the middle of a word
+set tabstop=4 " <tab> inserts 4 spaces
+set shiftwidth=4 " And an indent level is 4 spaces wide.
+set softtabstop=4 " <BS> over an autoindent deletes all spaces.
+set expandtab " Use spaces, not tabs, for autoindent/tab key.
+set shiftround " rounds indent to a multiple of shiftwidth
+set textwidth=80 " lines are automatically wrapped after 80 columns
+set nofoldenable " turn off folding
+set colorcolumn=80 " highlight column 80 (where words will wrap)
+set ls=2 " allways show status line
+set showcmd " Show incomplete normal mode commands as I type.
+set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
+set laststatus=2 " Always show statusline, even if only 1 window.
+
+""" Searching and Patterns
+set ignorecase " Default to using case insensitive searches,
+set smartcase " unless uppercase letters are used in the regex.
+set hlsearch " Highlight searches by default.
+set incsearch " Incrementally search while typing a /regex
+
+
+
+" nerdtree
+"
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+set mouse=a
+map <C-n> :NERDTreeToggle<CR>
+" Close if nothing
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeDirArrows=0
+
