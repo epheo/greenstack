@@ -6,3 +6,5 @@
     state: latest
     name:
       - cloud-init
+
+# - name: Enable and start cloud-init services

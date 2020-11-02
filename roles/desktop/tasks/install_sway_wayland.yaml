@@ -27,6 +27,14 @@
     src: ../files/mako
     dest: ~/.config/
 
+- copy:
+    src: ../files/bash_profile
+    dest: ~/.bash_profile
+
+- file: path=~/img state=directory
+- get_url: url=https://public.epheo.eu/wallpaper.jpg dest=~/img/
+
+
 - name: Reload sway config
   ignore_errors: yes
   shell: "swaymsg reload "
