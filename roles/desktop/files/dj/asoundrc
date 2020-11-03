@@ -1,4 +1,0 @@
-pcm.Audio_8_A { type plug; slave.pcm "hw:3,0,0"; }
-pcm.Audio_8_B { type plug; slave.pcm "hw:3,0,1"; }
-pcm.Audio_8_C { type plug; slave.pcm "hw:3,0,2"; }
-pcm.Audio_8_D { type plug; slave.pcm "hw:3,0,3"; }

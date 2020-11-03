@@ -1,6 +1,6 @@
 ---
 
-- name: Install workplace packages
+- name: Install needed packages
   become: yes
   package:
     state: latest
@@ -10,6 +10,28 @@
       - wofi
       - swaylock
       - mako
+      - libappindicator-gtk3
+      - ttf-font-awesome
+      - gopass
+      - alacritty
+      - gammastep
+      - ranger
+      - eog
+      - pulseaudio
+
+- name: Install less needed packages
+  become: yes
+  package:
+    state: latest
+    name: 
+      - qutebrowser
+      - vlc
+      - openconnect
+      - playerctl
+      - remmina
+      - freerdp
+      - pavucontrol
+      - virt-manager
 
 - copy:
     src: ../files/sway
@@ -18,6 +40,7 @@
 - copy:
     src: ../files/waybar
     dest: ~/.config/
+- shell: chmod +x ~/.config/waybar/waybar.sh
 
 - copy:
     src: ../files/swaylock
@@ -34,7 +57,30 @@
 - file: path=~/img state=directory
 - get_url: url=https://public.epheo.eu/wallpaper.jpg dest=~/img/
 
+- copy:
+    src: ../files/qutebrowser
+    dest: ~/.config/
+
+- copy:
+    src: ../files/gtk-2.0
+    dest: ~/.config/
+
+- copy:
+    src: ../files/gtk-3.0
+    dest: ~/.config/
+
+- copy:
+    src: ../files/gammastep
+    dest: ~/.config/
+
+- copy:
+    src: ../files/Code
+    dest: ~/.config/
+
+- copy:
+    src: ../files/Code
+    dest: "~/.config/Code - OSS/"
 
 - name: Reload sway config
   ignore_errors: yes
-  shell: "swaymsg reload "
+  shell: swaymsg reload

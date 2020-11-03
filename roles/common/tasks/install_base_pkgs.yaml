@@ -44,28 +44,3 @@
 - name: Install Plugins
   shell: "vim +PluginInstall +qall"
   when: "vimplugin_result.stdout != ''"
-
-
-
-# zsh
-# 
-# - name: Install needed packages
-#   become: yes
-#   package:
-#     state: latest
-#     name: zsh
-# 
-# - template:
-#     src: zshrc
-#     dest: ~/.zshrc
-# 
-# - template:
-#     src: zsh_alias
-#     dest: ~/.zsh_alias
-# 
-# - name: Change default Shell
-#   become: yes 
-#   user:
-#     name: "{{ ansible_user }}"
-#     shell: /bin/zsh
-# 

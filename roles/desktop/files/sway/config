@@ -1,12 +1,5 @@
 # Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 set $term alacritty
 
@@ -15,8 +8,8 @@ input * xkb_numlock enable
 set $menu wofi --show drun --gtk-dark --allow-images --hide-scroll --xoffset 0 --yoffset 650 --height 725 --width 500
 
 
-set $screenshot grim ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - ~/Images/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenshot grim ~/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+set $screenclip slurp | grim -g - ~/screenshots/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
 
 set $background ~/img/wallpaper.jpg
 
@@ -36,9 +29,7 @@ client.background       #2B2C2B
 
 # Autostart
 exec --no-startup-id mako
-exec --no-startup-id redshift -c ~/.config/redshift/config
-exec --no-startup-id nextcloud
-exec --no-startup-id libinput-gestures
+exec --no-startup-id gammastep
 exec --no-startup-id ferdi
 
 ### Output configuration
@@ -78,9 +69,6 @@ bindsym Control+Shift+Space exec makoctl dismiss --all
 
 bindsym $mod+x exec passmenu
 bindsym $mod+b exec qutebrowser
-
-# Toggle Redshift
-bindsym $mod+Home exec --no-startup-id pkill -USR1 redshift
 
 # Idle configuration
 exec swayidle \
