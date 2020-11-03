@@ -32,9 +32,15 @@
     "workbench.editor.highlightModifiedTabs": true,
     "files.trimTrailingWhitespace": true,
     "editor.renderWhitespace": "boundary",
-    "breadcrumbs.enabled": false,
-    "workbench.statusBar.visible": true,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "workbench.preferredLightColorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 4,
+    "workbench.view.alwaysShowHeaderActions": true,
+    "breadcrumbs.icons": false
 }

@@ -1,10 +1,5 @@
 ---
 
-- name: Install Cloud packages
-  become: yes
-  package:
-    state: latest
-    name:
-      - cloud-init
+
 
 # - name: Enable and start cloud-init services

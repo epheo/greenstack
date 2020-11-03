@@ -1,0 +1,50 @@
+---
+
+- hosts: localhost
+  connection: local 
+  gather_facts: no
+  tasks:
+    - name: Install System packages
+      become: yes
+      package:
+        state: latest
+        name:
+          - linux
+          - lsof
+          - gdisk
+          - openbsd-netcat
+          - openresolv
+          - openssl
+          - openssh
+          - cronie
+    
+    - name: Install Userland packages
+      become: yes
+      package:
+        state: latest
+        name:
+          - vim
+          - sudo
+          - git
+          - curl
+          - rsync
+          - tmux
+          - htop
+    
+    - copy:
+        src: ../files/vimrc
+        dest: ~/.vimrc
+    
+    - name: Install Vundle
+      ignore_errors: yes
+      shell: |
+        if [ ! -d ~/.vim/bundle/vundle ]; then
+          git clone https://github.com/VundleVim/Vundle.vim.git \
+            ~/.vim/bundle/vundle
+        fi
+      register: vimplugin_result
+      changed_when: "vimplugin_result.stdout != ''"
+      
+    - name: Install Plugins
+      shell: "vim +PluginInstall +qall"
+      when: "vimplugin_result.stdout != ''"

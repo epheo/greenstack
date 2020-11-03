@@ -1,9 +1,12 @@
 ---
 
-- hosts: nodes
+- hosts: localhost
+  connection: local 
   gather_facts: no
-  roles:
-    - common
   tasks:
-    - include_tasks: roles/common/tasks/install_base_pkgs.yaml
-    - include_tasks: roles/common/tasks/install_cloud_pkgs.yaml
+    - name: Install Cloud packages
+      become: yes
+      package:
+        state: latest
+        name:
+          - cloud-init

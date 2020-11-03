@@ -1,9 +1,37 @@
 ---
 
-- hosts: nodes
+- hosts: localhost
+  connection: local 
   gather_facts: no
-  roles:
-    - common
   tasks:
-    - include_tasks: roles/common/tasks/install_base_pkgs.yaml
-    - include_tasks: roles/common/tasks/install_rescue_pkgs.yaml
+    - name: Install testing tools packages
+      become: yes
+      package:
+        state: latest
+        name:
+          - iperf3
+          - tcpdump
+          - nmap
+          - strace
+          - hdparm
+          - sysstat
+          - fio
+          - efivar
+          - netperf
+          - hping
+          - perf
+          - bmon
+          - python-openstackclient
+          - numactl
+    
+    - name: Install Networking tools packages
+      become: yes
+      package:
+        state: latest
+        name:
+          - bridge-utils
+          - iproute2
+          - iputils
+          - net-tools
+          - openvswitch
+          - ethtool
