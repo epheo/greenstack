@@ -1,7 +1,10 @@
 #!/bin/bash
 # DEFMS: Distro Enhancer for maybe something
 
-# Personality
+debug=no
+interactive=no
+
+# Guest image personality
 cloud=yes
 desktop=yes
 rescue=no
@@ -9,14 +12,15 @@ rescue=no
 # Guest boot mode can be uefi or bios
 boot_mode=uefi
 
+# Constructing file name
 date=$(date -Iseconds |sed -r 's/[^a-za-z0-9]//g; s/0000/0/g')
-
-debug=no
-interactive=no
-
 personality=$(if [ $cloud = yes ] ;then echo 'cloud-' ;fi)
 personality=${personality}$(if [ $rescue = yes ] ;then echo 'rescue-' ;fi)
 personality=${personality}$(if [ $desktop = yes ] ;then echo 'desktop-' ;fi)
+
+file_name=arch-${boot_mode}-${personality}${date}-x86_64
+
+directory=/mnt/data/build
 
 # Authentication
 user=cloud
@@ -28,7 +32,4 @@ format=qcow2
 
 # Volume size in Gb
 disk_size=8
-
-directory=/mnt/data/build
-file_name=arch-${boot_mode}-${personality}${date}-x86_64
 
