@@ -8,7 +8,7 @@ c.auto_save.session = True
 
 c.content.cookies.accept = 'all'
 c.content.geolocation = False
-c.content.notification = False
+c.content.notifications = False
 c.content.plugins = True
 c.content.headers.referer = 'same-domain'
 

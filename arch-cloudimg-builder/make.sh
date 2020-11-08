@@ -10,16 +10,9 @@
 # Import config
 . config
 
-if [ $debug = 'yes' ]; then
-  set -e
-  set -x
-fi
+# Perform reqs and depts check before run
+. sys_check.sh
 
-
-passless_sudo() {
-  test "$(sudo /usr/bin/id -u)" -eq 0
-}
-passless_sudo
 
 # Import error handling functions
 . cleanup.sh
@@ -129,6 +122,8 @@ $chenv git clone https://github.com/epheo/greenstack $greenstack
 
 ansible_cmd="$chenv sudo -u $user ansible-playbook \
                -i $greenstack/inventory.local"
+
+$ansible_cmd $greenstack/base.yaml
 
 if [ $rescue = yes ] ;then 
   echo "Launching Ansible Rescue role"

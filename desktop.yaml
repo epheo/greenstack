@@ -21,6 +21,8 @@
           - gammastep
           - ranger
           - pulseaudio
+          - materia-gtk-theme
+          - papirus-icon-theme
     
     - name: Install less needed packages
       become: yes
