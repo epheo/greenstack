@@ -1,0 +1,61 @@
+---
+
+- name: Install needed packages
+  become: yes
+  package:
+    state: latest
+    name: 
+      - ttf-font-awesome
+      - gopass
+      - alacritty
+      - gammastep
+      - ranger
+      - pulseaudio
+      - materia-gtk-theme
+      - papirus-icon-theme
+
+- name: Install less needed packages
+  become: yes
+  package:
+    state: latest
+    name: 
+      - qutebrowser
+      - vlc
+      - openconnect
+      - playerctl
+      - remmina
+      - freerdp
+      - pavucontrol
+      - virt-manager
+      - eog
+      - zathura
+      - zathura-pdf-mupdf
+      - libappindicator-gtk3
+
+- file: path=~/img state=directory
+- get_url: url=https://public.epheo.eu/wallpaper.jpg dest=~/img/
+
+- copy:
+    src: files/qutebrowser
+    dest: ~/.config/
+
+- copy:
+    src: files/gtk-2.0
+    dest: ~/.config/
+
+- copy:
+    src: files/gtk-3.0
+    dest: ~/.config/
+
+- copy:
+    src: files/gammastep
+    dest: ~/.config/
+
+- copy:
+    src: files/Code
+    dest: ~/.config/
+
+- copy:
+    src: files/Code
+    dest: "~/.config/Code - OSS/"
+

@@ -1,0 +1,38 @@
+---
+
+- name: Install needed packages
+  become: yes
+  package:
+    state: latest
+    name: 
+      - sway
+      - waybar
+      - wofi
+      - swaylock
+      - mako
+
+- copy:
+    src: files/wayland/sway
+    dest: ~/.config/
+
+- copy:
+    src: files/wayland/waybar
+    dest: ~/.config/
+- shell: chmod +x ~/.config/waybar/waybar.sh
+- shell: chmod +x ~/.config/waybar/modules/*
+
+- copy:
+    src: files/wayland/swaylock
+    dest: ~/.config/
+
+- copy:
+    src: files/wayland/mako
+    dest: ~/.config/
+
+- copy:
+    src: files/wayland/bash_profile_sway
+    dest: ~/.bash_profile
+
+- name: Reload sway config
+  ignore_errors: yes
+  shell: swaymsg reload

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+numlockx &
+feh --bg-scale ~/img/wallpaper.jpg
+exec i3
