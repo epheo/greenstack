@@ -5,30 +5,51 @@
   package:
     state: latest
     name: 
-      - i3
-      - i3blocks
+      - i3-gaps
+      - i3lock
+      - i3blocks #py3status
       - xorg-xinit
       - xorg
       - numlockx
-
+      - ttf-hack
+      - gsimplecal
+      - redshift
+      - wireless_tools
+      - dunst
+  tags: [ i3, xorg, pkgs ]
 
 - copy:
     src: files/xorg/Xdefaults
     dest: ~/.Xdefaults
+  tags: [ i3, xorg ]
 
 - copy:
     src: files/xorg/xinitrc
     dest: ~/.xinitrc
+  tags: [ i3, xorg ]
 
 - file: path=~/.config/i3blocks state=directory
+  tags: [ i3, xorg, i3blocks ]
 - copy:
-    src: files/xorg/i3/i3blocks.conf
-    dest: ~/.config/i3blocks/config
+    src: files/xorg/i3blocks
+    dest: ~/.config/
+  tags: [ i3, xorg, i3blocks ]
+- shell: chmod +x ~/.config/i3blocks/modules/*
+  tags: [ i3, xorg, i3blocks ]
+
+- file: path=~/.config/dunst state=directory
+  tags: [ i3, xorg, dunst ]
+- copy:
+    src: files/xorg/dunstrc
+    dest: ~/.config/dunst/dunstrc
+  tags: [ i3, xorg, dunst ]
 
 - copy:
-    src: files/xorg/i3/config
-    dest: ~/.config/i3/config
+    src: files/xorg/i3
+    dest: ~/.config/
+  tags: [ i3, xorg ]
 
 - name: Reload i3 config
   ignore_errors: yes
   shell: i3-msg reload
+  tags: [ i3, xorg ]

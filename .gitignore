@@ -1,4 +1,5 @@
 *.retry
+roles/desktop/tasks/nvidia-nonfree.yaml
 secrets/
 inventory*
 !inventory.local

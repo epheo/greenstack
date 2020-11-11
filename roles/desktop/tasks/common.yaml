@@ -47,9 +47,9 @@
     src: files/gtk-3.0
     dest: ~/.config/
 
-- copy:
-    src: files/gammastep
-    dest: ~/.config/
+# - copy:
+#     src: files/gammastep
+#     dest: ~/.config/
 
 - copy:
     src: files/Code

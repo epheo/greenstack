@@ -10,29 +10,39 @@
       - wofi
       - swaylock
       - mako
+  tags: [ sway, wayland ]
 
 - copy:
     src: files/wayland/sway
     dest: ~/.config/
+  tags: [ sway, wayland ]
 
 - copy:
     src: files/wayland/waybar
     dest: ~/.config/
+  tags: [ sway, wayland, waybar ]
 - shell: chmod +x ~/.config/waybar/waybar.sh
+  tags: [ sway, wayland, waybar ]
 - shell: chmod +x ~/.config/waybar/modules/*
+  tags: [ sway, wayland, waybar ]
 
 - copy:
     src: files/wayland/swaylock
     dest: ~/.config/
+  tags: [ sway, wayland ]
 
 - copy:
     src: files/wayland/mako
     dest: ~/.config/
+  tags: [ sway, wayland ]
 
 - copy:
     src: files/wayland/bash_profile_sway
     dest: ~/.bash_profile
+  tags: [ sway, wayland ]
 
 - name: Reload sway config
   ignore_errors: yes
   shell: swaymsg reload
+  tags: [ sway, wayland ]
+

@@ -1,0 +1,30 @@
+# i3blocks config file
+#border_top=0
+#border_left=0
+#border_right=0
+#border_bottom=2
+#border=#928374
+
+[spotify]
+command=$HOME/.config/i3blocks/modules/spotify.sh
+interval=2
+
+[weather]
+command=$HOME/.config/i3blocks/modules/weather.sh
+interval=10
+
+[storage]
+command=$HOME/.config/i3blocks/modules/storage.sh
+interval=10
+
+[network]
+command=$HOME/.config/i3blocks/modules/network.sh
+interval=10
+
+[battery]
+command=$HOME/.config/i3blocks/modules/battery.sh
+interval=10
+
+[time]
+command=echo "$(date +'%a %d %b') $(date +'%T')" ; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=5

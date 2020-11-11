@@ -26,6 +26,7 @@
       - rsync
       - tmux
       - htop
+      - inetutils
 
 - copy:
     src: ../files/vimrc

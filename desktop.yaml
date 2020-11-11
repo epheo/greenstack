@@ -4,6 +4,9 @@
   connection: local 
   gather_facts: no
   tasks:
-    - include_tasks: roles/desktop/common.yaml
-    - include_tasks: roles/desktop/i3-xorg.yaml
-    - include_tasks: roles/desktop/sway-wayland.yaml
+    - include_tasks: roles/desktop/tasks/common.yaml
+      tags: [ sway, wayland, waybar, i3, xorg, i3blocks ]
+    - include_tasks: roles/desktop/tasks/i3-xorg.yaml
+      tags: [ i3, xorg, i3blocks, dunst ]
+    - include_tasks: roles/desktop/tasks/sway-wayland.yaml
+      tags: [ sway, wayland, waybar ]
