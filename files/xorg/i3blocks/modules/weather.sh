@@ -81,7 +81,7 @@ text="$temperature $condition"
 
 case "$BLOCK_BUTTON" in
     1|2)
-        text="$temperature $condition  ${weather[0]}: ${weather[1]}";;
+        text="$temperature ${weather[0]}: ${weather[1]} $condition";;
     3)
         text="$temperature $condition"
 esac

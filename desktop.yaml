@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - include_tasks: roles/desktop/tasks/common.yaml
-      tags: [ sway, wayland, waybar, i3, xorg, i3blocks ]
+      tags: always
     - include_tasks: roles/desktop/tasks/i3-xorg.yaml
       tags: [ i3, xorg, i3blocks, dunst ]
     - include_tasks: roles/desktop/tasks/sway-wayland.yaml

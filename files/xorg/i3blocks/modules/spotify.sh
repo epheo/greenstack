@@ -10,7 +10,7 @@ if [[ $class == "playing" ]]; then
   fi
   text=$info" "$icon
 elif [[ $class == "paused" ]]; then
-  text="$icon  -"
+  text="-  $icon"
 elif [[ $class == "stopped" ]]; then
   text=""
 fi

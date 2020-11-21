@@ -13,6 +13,7 @@
       - pulseaudio
       - materia-gtk-theme
       - papirus-icon-theme
+  tags: [ xorg, wayland ]
 
 - name: Install less needed packages
   become: yes
@@ -31,31 +32,25 @@
       - zathura
       - zathura-pdf-mupdf
       - libappindicator-gtk3
+  tags: [ xorg, wayland ]
 
 - file: path=~/img state=directory
+  tags: [ xorg, wayland ]
 - get_url: url=https://public.epheo.eu/wallpaper.jpg dest=~/img/
+  tags: [ xorg, wayland ]
 
 - copy:
     src: files/qutebrowser
     dest: ~/.config/
+  tags: [ xorg, wayland ]
 
 - copy:
     src: files/gtk-2.0
     dest: ~/.config/
+  tags: [ xorg, wayland ]
 
 - copy:
     src: files/gtk-3.0
     dest: ~/.config/
-
-# - copy:
-#     src: files/gammastep
-#     dest: ~/.config/
-
-- copy:
-    src: files/Code
-    dest: ~/.config/
-
-- copy:
-    src: files/Code
-    dest: "~/.config/Code - OSS/"
+  tags: [ xorg, wayland ]
 

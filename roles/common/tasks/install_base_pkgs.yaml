@@ -27,6 +27,7 @@
       - tmux
       - htop
       - inetutils
+      - jq
 
 - copy:
     src: ../files/vimrc

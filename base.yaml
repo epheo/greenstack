@@ -4,6 +4,7 @@
   connection: local 
   gather_facts: no
   tasks:
+    - import_tasks: roles/common/tasks/install_base_pkgs.yaml
     - name: Install System packages
       become: yes
       package:
@@ -31,6 +32,7 @@
           - tmux
           - htop
           - bash-completion
+          - jq
     
     - copy:
         src: ../files/vimrc

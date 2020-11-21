@@ -1,0 +1,18 @@
+[Removed Associations]
+
+[Added Associations]
+text/plain=userapp-vim -f-6OFDTZ.desktop;
+image/jpeg=eog.desktop;
+image/png=eog.desktop;
+
+[Default Applications]
+text/plain=userapp-vim -f-6OFDTZ.desktop
+image/jpeg=eog.desktop
+image/png=eog.desktop
+inode/directory=ranger.desktop
+application/pdf=zathura.desktop
+text/html=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+x-scheme-handler/about=qutebrowser.desktop
+x-scheme-handler/unknown=qutebrowser.desktop

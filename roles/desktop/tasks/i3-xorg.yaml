@@ -16,7 +16,13 @@
       - redshift
       - wireless_tools
       - dunst
+      - pasystray
   tags: [ i3, xorg, pkgs ]
+
+- copy:
+    src: files/xorg/mimeapps.list
+    dest: ~/.config/
+  tags: [ i3, xorg ]
 
 - copy:
     src: files/xorg/Xdefaults

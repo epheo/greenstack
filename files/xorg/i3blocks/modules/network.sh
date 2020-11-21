@@ -15,4 +15,4 @@ case "$BLOCK_BUTTON" in
         text=""
 esac
 
-echo $icon $text
+echo $text $icon
