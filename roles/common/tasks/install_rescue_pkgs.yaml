@@ -1,2 +1,41 @@
 ---
 
+- hosts: localhost
+  connection: local 
+  gather_facts: no
+  tasks:
+
+    - name: Install testing tools packages
+      tags: rescue
+      become: yes
+      package:
+        state: latest
+        name:
+          - iperf3
+          - tcpdump
+          - nmap
+          - strace
+          - hdparm
+          - sysstat
+          - fio
+          - efivar
+          - netperf
+          - hping
+          - perf
+          - bmon
+          - python-openstackclient
+          - numactl
+    
+    - name: Install Networking tools packages
+      tags: [ rescue, net-tools ]
+      become: yes
+      package:
+        state: latest
+        name:
+          - bridge-utils
+          - iproute2
+          - iputils
+          - net-tools
+          - openvswitch
+          - ethtool
+

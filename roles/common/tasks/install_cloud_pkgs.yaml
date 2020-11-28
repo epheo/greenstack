@@ -1,5 +1,15 @@
 ---
 
+- hosts: localhost
+  connection: local 
+  gather_facts: no
+  tasks:
 
+    - name: Install Cloud packages
+      tags: cloud
+      become: yes
+      package:
+        state: latest
+        name:
+          - cloud-init
 
-# - name: Enable and start cloud-init services

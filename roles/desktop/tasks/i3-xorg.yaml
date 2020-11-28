@@ -1,6 +1,7 @@
 ---
 
 - name: Install needed packages
+  tags: [ i3, xorg, pkgs ]
   become: yes
   package:
     state: latest
@@ -17,27 +18,26 @@
       - wireless_tools
       - dunst
       - pasystray
-  tags: [ i3, xorg, pkgs ]
 
 - copy:
-    src: files/xorg/mimeapps.list
+    src: dotfiles/xorg/mimeapps.list
     dest: ~/.config/
   tags: [ i3, xorg ]
 
 - copy:
-    src: files/xorg/Xdefaults
+    src: dotfiles/xorg/Xdefaults
     dest: ~/.Xdefaults
   tags: [ i3, xorg ]
 
 - copy:
-    src: files/xorg/xinitrc
+    src: dotfiles/xorg/xinitrc
     dest: ~/.xinitrc
   tags: [ i3, xorg ]
 
 - file: path=~/.config/i3blocks state=directory
   tags: [ i3, xorg, i3blocks ]
 - copy:
-    src: files/xorg/i3blocks
+    src: dotfiles/xorg/i3blocks
     dest: ~/.config/
   tags: [ i3, xorg, i3blocks ]
 - shell: chmod +x ~/.config/i3blocks/modules/*
@@ -46,12 +46,12 @@
 - file: path=~/.config/dunst state=directory
   tags: [ i3, xorg, dunst ]
 - copy:
-    src: files/xorg/dunstrc
+    src: dotfiles/xorg/dunstrc
     dest: ~/.config/dunst/dunstrc
   tags: [ i3, xorg, dunst ]
 
 - copy:
-    src: files/xorg/i3
+    src: dotfiles/xorg/i3
     dest: ~/.config/
   tags: [ i3, xorg ]
 
@@ -59,3 +59,4 @@
   ignore_errors: yes
   shell: i3-msg reload
   tags: [ i3, xorg ]
+

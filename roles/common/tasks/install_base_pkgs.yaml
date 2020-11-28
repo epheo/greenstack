@@ -1,6 +1,7 @@
 ---
 
 - name: Install System packages
+  tags: [ base, linux ]
   become: yes
   package:
     state: latest
@@ -26,6 +27,7 @@
   when: arch.stat.exists == True
 
 - name: Install Userland packages
+  tags: [ base, userland ]
   become: yes
   package:
     state: latest
@@ -40,10 +42,12 @@
       - jq
 
 - copy:
-    src: ../files/vimrc
+    src: dotfiles/vimrc
     dest: ~/.vimrc
+  tags: [ base, vim ]
 
 - name: Install Vundle
+  tags: [ base, vim ]
   ignore_errors: yes
   shell: |
     if [ ! -d ~/.vim/bundle/vundle ]; then
@@ -54,5 +58,7 @@
   changed_when: "vimplugin_result.stdout != ''"
   
 - name: Install Plugins
+  tags: [ base, vim ]
   shell: "vim +PluginInstall +qall"
   when: "vimplugin_result.stdout != ''"
+
