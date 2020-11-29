@@ -40,17 +40,17 @@
   tags: [ xorg, wayland ]
 
 - copy:
-    src: files/qutebrowser
+    src: dotfiles/qutebrowser
     dest: ~/.config/
   tags: [ xorg, wayland ]
 
 - copy:
-    src: files/gtk-2.0
+    src: dotfiles/gtk-2.0
     dest: ~/.config/
   tags: [ xorg, wayland ]
 
 - copy:
-    src: files/gtk-3.0
+    src: dotfiles/gtk-3.0
     dest: ~/.config/
   tags: [ xorg, wayland ]
 

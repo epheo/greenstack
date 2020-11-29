@@ -13,12 +13,12 @@
   tags: [ sway, wayland ]
 
 - copy:
-    src: files/wayland/sway
+    src: dotfiles/wayland/sway
     dest: ~/.config/
   tags: [ sway, wayland ]
 
 - copy:
-    src: files/wayland/waybar
+    src: dotfiles/wayland/waybar
     dest: ~/.config/
   tags: [ sway, wayland, waybar ]
 - shell: chmod +x ~/.config/waybar/waybar.sh
@@ -27,17 +27,17 @@
   tags: [ sway, wayland, waybar ]
 
 - copy:
-    src: files/wayland/swaylock
+    src: dotfiles/wayland/swaylock
     dest: ~/.config/
   tags: [ sway, wayland ]
 
 - copy:
-    src: files/wayland/mako
+    src: dotfiles/wayland/mako
     dest: ~/.config/
   tags: [ sway, wayland ]
 
 - copy:
-    src: files/wayland/bash_profile_sway
+    src: dotfiles/wayland/bash_profile_sway
     dest: ~/.bash_profile
   tags: [ sway, wayland ]
 

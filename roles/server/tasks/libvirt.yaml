@@ -1,0 +1,6 @@
+---
+
+- copy:
+    src: roles/server/files/hooks
+    dest: /etc/libvirt/
+

@@ -1,0 +1,13 @@
+---
+
+- hosts: localhost
+  connection: local 
+  gather_facts: no
+  tasks:
+    - import_tasks: roles/common/tasks/install_base_pkgs.yaml
+      tags: [ base, linux, userland, vim ]
+    - import_tasks: roles/common/tasks/install_cloud_pkgs.yaml
+      tags: [ cloud ]
+    - import_tasks: roles/common/tasks/install_rescue_pkgs.yaml
+      tags: [ rescue, net-tools ]
+

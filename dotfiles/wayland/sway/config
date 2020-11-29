@@ -35,6 +35,7 @@ exec --no-startup-id ferdi
 ### Output configuration
 #
 output * bg $background fill
+output Virtual-1 res 2560x1080
 
 # Font
 font pango:Sans 12
